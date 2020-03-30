@@ -1,8 +1,10 @@
 from django.db import models
 
 # Create your models here.
+# today is my table name
+
 class todays(models.Model):
-    Comany_symbol = models.CharField(max_length=64)
+    Comany_symbol = models.CharField(max_length=64)               # I have used charfield for all the field to avoid data error
     company_name = models.CharField(max_length=64)
     price_data = models.CharField(max_length=64)
     change = models.CharField(max_length=64)
