@@ -1,4 +1,4 @@
-Django-WebScraping-
+Django-WebScraping
 
 Django project with WebScraping using BeautifulSoup
 
