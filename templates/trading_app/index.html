@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+
+
+{% extends 'trading_app/base.html'%}
+
+    {% block  body_block%}
+    <h1>WELCOME TO INDEX PAGE</h1>
+    <a href="{% url 'trading_app:trading' %}">TRADING PAGE</a>
+    {% endblock %}

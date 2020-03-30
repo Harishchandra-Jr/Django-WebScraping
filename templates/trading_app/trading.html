@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+{% extends 'trading_app/base.html' %}
+
+{% block body_block%}
+<h1> WELCOME TO TRADING PAGE</h1>
+<h2>Todays most active stocks </h2>
+<!-- <a href="{% url 'trading_app:base' %}">BASE PAGE</a> -->
+<!-- <a href="{% url 'index' %}">BACK</a> -->
+
+<div class="djnangoOne">
+
+    {% if access_data %}
+
+    <table class="table table-sm table-hover table-bordered">
+
+        <thead class="thead-light">
+            <th>Comany_symbol</th>
+            <th>company_name</th>
+            <th>price_data</th>
+            <th>change</th>
+            <th>change_in_per</th>
+            <th>volume</th>
+            <th>Avgvol_In3Month</th>
+            <th>Market_cap</th>
+            <th>PE_ratio</th>
+        </thead>
+
+
+
+        {% for acc in access_data  %}
+        <tbody>
+            <tr>
+                <td>{{ acc.Comany_symbol  }}</td>
+                <td>{{ acc.company_name  }}</td>
+                <td>{{ acc.price_data  }}</td>
+                <td>{{ acc.change  }}</td>
+                <td>{{ acc.change_in_percentage  }}</td>
+                <td>{{ acc.volume  }}</td>
+                <td>{{ acc.Avgvol_In3Month  }}</td>
+                <td>{{ acc.Market_cap  }}</td>
+                <td>{{ acc.PE_ratio  }}</td>
+                {% endfor%}
+
+            </tr>
+
+
+        </tbody>
+    </table>
+    {% else %}
+    <p> NO ACCESS DATA FOUND</p>
+    {% endif %}
+</div>
+{% endblock%}
